@@ -1,0 +1,17 @@
+.headerList {
+    display: flex;
+    gap: 30px;
+    list-style: none;    
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+/* .headerItem{
+    
+} */
+
+.headerLink{
+    text-decoration: none;
+    color: #000000;
+}
