@@ -1,20 +1,27 @@
 import React from 'react'
 import css from './Navigation.module.css'
 import { NavLink } from 'react-router-dom'
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+   &.active {
+    color: orange;
+  }
+`;
 
 const Navigation = () => {
   return (
 
-  <div className={css.header}>
+  <>
     <ul className={css.headerList}>
       <li className={css.headerItem}>
-        <NavLink className={css.headerLink}  to='/'>Home</NavLink>
+        <StyledLink className={css.headerLink}  to='/'>Home</StyledLink>
       </li>
       <li className={css.headerItem}>
-        <NavLink className={css.headerLink} to='/movies'>Movies</NavLink>
+        <StyledLink className={css.headerLink} to='/movies'>Movies</StyledLink>
       </li>
     </ul>
-</div>
+</>
   )
 }
 

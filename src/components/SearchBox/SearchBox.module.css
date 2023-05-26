@@ -1,0 +1,32 @@
+.wrapper{
+    display: inline-flex;
+  align-items: center;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+.form{
+    padding: 24px;
+}
+
+.input {
+width: 500px;
+    padding: 8px 32px 8px 8px;
+  border-radius: 4px;
+  font: inherit;
+  outline: none;
+  border: 2px solid rgb(130, 112, 112);
+}
+
+.button {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    right: 24px;
+    background: rgb(188, 181, 181);
+    border-top-right-radius: 4px; 
+    border-bottom-right-radius: 4px;
+    border: 2px solid rgb(130, 112, 112);
+    cursor: pointer;
+}

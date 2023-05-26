@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Movies() {
+const Cast = () => {
   return (
     <div>
-      Movies
+      Cast
     </div>
   )
 }
 
-export default Movies
+export default Cast

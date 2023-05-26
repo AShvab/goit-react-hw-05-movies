@@ -1,14 +1,22 @@
-import Navigation from 'components/Navigation/Navigation'
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import Navigation from 'components/Navigation/Navigation';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import css from './Layout.module.css';
 
 const Layout = () => {
   return (
     <>
-      <Navigation />
-      <Outlet />    
-    </>
-  )
-}
+      <header className={css.header}>
+        <Navigation />
+      </header>
 
-export default Layout
+      <main>
+        <Outlet />
+      </main>
+
+      <footer></footer>
+    </>
+  );
+};
+
+export default Layout;
