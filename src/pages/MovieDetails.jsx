@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { Link, Outlet} from 'react-router-dom'
 
 function MovieDetails() {
+
+
   // const {movieId} = useParams()
-  
+    // const { genres, overview, title, vote_average, release_date, poster_path } =
+  // movieInfo;
   useEffect(() => {
     // HTTPS  запит
       }, []);
+      
 
   return (
     <div>

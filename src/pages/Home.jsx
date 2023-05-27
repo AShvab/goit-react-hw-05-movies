@@ -1,14 +1,13 @@
 import  { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingMoviesFetch } from 'services/api';
-
+import { trendingMoviesFetch } from 'services/api';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    TrendingMoviesFetch().then(setMovies);
-  }, []); 
+    trendingMoviesFetch().then(setMovies);
+  }, []);   
 
   return (
    <>

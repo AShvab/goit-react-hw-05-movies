@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import PropTypes from 'prop-types';
-// import { toast } from 'react-toastify';
 import { ImSearch } from 'react-icons/im';
 import css from './SearchBox.module.css';
+import { toast } from 'react-hot-toast';
 
-const SearchBox = ({ onSubmit }) => {
+const SearchBox = ({ onChange }) => {
   const [filmName, setFilmName] = useState('');
 
   const handleSearchChange = event => {
@@ -14,12 +14,11 @@ const SearchBox = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
     if (filmName.trim() === '') {
-      //   return toast.warn('Enter film name');
-      return alert('Please enter film name');
+      return toast('Please enter film name');
     }
-    onSubmit(filmName);
+    onChange(filmName);
     // -якщо необхідно очистити форму:
-    // setPictureName('');
+    // setFilmName('');
   };
 
   return (
@@ -44,7 +43,7 @@ const SearchBox = ({ onSubmit }) => {
 };
 
 SearchBox.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default SearchBox;

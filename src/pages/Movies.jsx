@@ -1,24 +1,35 @@
-import SearchBox from 'components/SearchBox/SearchBox'
-import React, { useEffect } from 'react'
-import {  Outlet } from 'react-router-dom';
+import SearchBox from 'components/SearchBox/SearchBox';
+import React, { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { searchMoviesFetch } from 'services/api';
 
 const Movies = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [movies, setMovies] = useState([]);
 
+  const query = searchParams.get('query') ?? '';
+  
   useEffect(() => {
-    // HTTPS  запит
-      }, []);
+    if (query) {
+      searchMoviesFetch(query).then(setMovies);
+    }
+  }, [query, searchParams]);
 
-  const handleSubmit = (filmName) => {
-    // Обробка подання форми
-    console.log(filmName);
+  const nextQueryString = query => {
+    const nextParams = query !== '' ? { query } : {};
+    setSearchParams(nextParams);
   };
 
   return (
     <>
-      <SearchBox onSubmit={handleSubmit}/>
-      <Outlet />  
+      <SearchBox value={query} onChange={nextQueryString} />
+      {movies.map(movie => (
+        <li key={movie.id}>
+          <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+        </li>
+      ))}
     </>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;
