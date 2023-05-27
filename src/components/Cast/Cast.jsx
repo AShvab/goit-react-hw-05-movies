@@ -2,7 +2,7 @@ const Cast = () => {
  
   return (
     <div>
-      Cast: 
+      Cast 
     </div>
   )
 }

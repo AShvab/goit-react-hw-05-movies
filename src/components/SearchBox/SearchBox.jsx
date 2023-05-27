@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ImSearch } from 'react-icons/im';
 import css from './SearchBox.module.css';
@@ -35,7 +35,7 @@ const SearchBox = ({ onChange }) => {
           type="text"
           autoComplete="off"
           autoFocus
-          placeholder="Search film"
+          placeholder="Search movie"
         />
       </form>
     </div>

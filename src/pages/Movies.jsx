@@ -8,7 +8,7 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
 
   const query = searchParams.get('query') ?? '';
-  
+
   useEffect(() => {
     if (query) {
       searchMoviesFetch(query).then(setMovies);
