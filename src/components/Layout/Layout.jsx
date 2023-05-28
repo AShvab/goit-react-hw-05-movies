@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navigation from 'components/Navigation/Navigation';
 import css from './Layout.module.css';
+import { Suspense } from 'react';
 
 const Layout = () => {
   return (
@@ -21,6 +22,7 @@ const Layout = () => {
       </header>
 
       <main>
+        <Suspense fallback={<div>Loading...</div>}/>  
         <Outlet />
       </main>
 

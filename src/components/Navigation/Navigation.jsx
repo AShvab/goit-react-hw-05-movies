@@ -10,7 +10,6 @@ const StyledLink = styled(NavLink)`
 
 const Navigation = () => {
   return (
-
   <>
     <ul className={css.headerList}>
       <li className={css.headerItem}>

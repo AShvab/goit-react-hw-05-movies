@@ -4,8 +4,7 @@ import css from './SearchBox.module.css';
 import { toast } from 'react-hot-toast';
 
 const SearchBox = ({value, onChange }) => {
- 
-
+  
   const handleSubmit = event => {
     event.preventDefault();
     if (value.trim() === '') {
@@ -43,4 +42,3 @@ SearchBox.propTypes = {
 
 export default SearchBox;
 
-// +++++++++++++++++++++++++============================

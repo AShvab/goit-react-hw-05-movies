@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation,  useParams } from 'react-router-dom';
 import { movieDetailsFetch } from 'services/api';
 
-function MovieDetails() {
+const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -57,8 +57,8 @@ function MovieDetails() {
         <li>
           <Link to="reviews">Reviews</Link>
         </li>
-      </ul>
-      <Outlet />
+      </ul>  
+      <Outlet />      
     </div>
   );
 }
