@@ -2,6 +2,7 @@ import SearchBox from 'components/SearchBox/SearchBox';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { searchMoviesFetch } from 'services/api';
+import css from './Movies.module.css'
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -32,13 +33,16 @@ const Movies = () => {
   return (
     <>
       <SearchBox value={query} onChange={updateQueryString} />
+      <ul>
       {movies.map(movie => (
-        <li key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+        <li key={movie.id} className={css.item}>
+          <Link to={`/movies/${movie.id}`} state={{ from: location }} className={css.link}>
             {movie.title} {getReleaseYear(movie)}
           </Link>
         </li>
       ))}
+      </ul>
+
     </>
   );
 };

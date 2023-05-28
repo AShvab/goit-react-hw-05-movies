@@ -22,8 +22,9 @@ const Layout = () => {
       </header>
 
       <main>
-        <Suspense fallback={<div>Loading...</div>}/>  
+        <Suspense fallback={<div>Loading...</div>}>  
         <Outlet />
+        </Suspense>
       </main>
 
       <footer></footer>

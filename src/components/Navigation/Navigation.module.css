@@ -1,7 +1,8 @@
 
 .headerList {
   display: flex;
-  gap: 30px;
+  padding-left: 50px;
+  gap: 40px;
   list-style: none;
   font-size: 20px;
   font-weight: 500;
