@@ -10,9 +10,9 @@ export async function trendingMoviesFetch() {
   return response.data.results;
 }
 
-export async function searchMoviesFetch(input) {
+export async function searchMoviesFetch(searchQuery) {
   const response = await axios.get(
-    `${BASE_URL}/search/movie?query=${input}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`
+    `${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`
   );
   return response.data.results;
 }

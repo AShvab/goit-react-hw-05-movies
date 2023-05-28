@@ -1,22 +1,17 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ImSearch } from 'react-icons/im';
 import css from './SearchBox.module.css';
 import { toast } from 'react-hot-toast';
 
-const SearchBox = ({ onChange }) => {
-  const [filmName, setFilmName] = useState('');
-
-  const handleSearchChange = event => {
-    setFilmName(event.currentTarget.value.toLowerCase());
-  };
+const SearchBox = ({value, onChange }) => {
+ 
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (filmName.trim() === '') {
+    if (value.trim() === '') {
       return toast('Please enter film name');
     }
-    onChange(filmName);
+    onChange(value);
     // -якщо необхідно очистити форму:
     // setFilmName('');
   };
@@ -30,8 +25,8 @@ const SearchBox = ({ onChange }) => {
 
         <input
           className={css.input}
-          onChange={handleSearchChange}
-          value={filmName}
+          onChange={(e) => onChange(e.target.value)}
+          value={value}
           type="text"
           autoComplete="off"
           autoFocus
@@ -47,3 +42,5 @@ SearchBox.propTypes = {
 };
 
 export default SearchBox;
+
+// +++++++++++++++++++++++++============================

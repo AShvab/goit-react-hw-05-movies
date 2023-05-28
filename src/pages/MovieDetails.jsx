@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, Outlet, useLocation,  useParams } from 'react-router-dom';
 import { movieDetailsFetch } from 'services/api';
 
 function MovieDetails() {
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
+  const backLinkLocationRef = useRef(location.state?.from ?? '/movies')
 
   const { movieId } = useParams();
 
@@ -23,6 +25,7 @@ function MovieDetails() {
 
   return (
     <div>
+      <Link to={backLinkLocationRef.current}>Go back</Link>
       {loading && 'Loading ...'}
       {error && <div>{error}</div>}
       {movie && (
