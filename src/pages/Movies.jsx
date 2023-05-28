@@ -8,16 +8,16 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const location = useLocation();
 
-  const query = searchParams.get('query') ?? "";
- 
+  const query = searchParams.get('query') ?? '';
+
   useEffect(() => {
     if (query) {
       searchMoviesFetch(query).then(setMovies);
     }
   }, [query, searchParams]);
 
-  const updateQueryString = (query) => {
-    const nextParams = query !== "" ? { query } : {};
+  const updateQueryString = query => {
+    const nextParams = query !== '' ? { query } : {};
     setSearchParams(nextParams);
   };
 
@@ -26,7 +26,9 @@ const Movies = () => {
       <SearchBox value={query} onChange={updateQueryString} />
       {movies.map(movie => (
         <li key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{ from: location }}>{movie.title}</Link>
+          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+            {movie.title}
+          </Link>
         </li>
       ))}
     </>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, Outlet, useLocation,  useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { movieDetailsFetch } from 'services/api';
 
 const MovieDetails = () => {
@@ -7,7 +7,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const backLinkLocationRef = useRef(location.state?.from ?? '/movies')
+  const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
 
   const { movieId } = useParams();
 
@@ -57,10 +57,10 @@ const MovieDetails = () => {
         <li>
           <Link to="reviews">Reviews</Link>
         </li>
-      </ul>  
-      <Outlet />      
+      </ul>
+      <Outlet />
     </div>
   );
-}
+};
 
 export default MovieDetails;

@@ -3,8 +3,7 @@ import { ImSearch } from 'react-icons/im';
 import css from './SearchBox.module.css';
 import { toast } from 'react-hot-toast';
 
-const SearchBox = ({value, onChange }) => {
-  
+const SearchBox = ({ value, onChange }) => {
   const handleSubmit = event => {
     event.preventDefault();
     if (value.trim() === '') {
@@ -24,7 +23,7 @@ const SearchBox = ({value, onChange }) => {
 
         <input
           className={css.input}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={e => onChange(e.target.value)}
           value={value}
           type="text"
           autoComplete="off"
@@ -41,4 +40,3 @@ SearchBox.propTypes = {
 };
 
 export default SearchBox;
-
