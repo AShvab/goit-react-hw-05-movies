@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { movieDetailsFetch } from 'services/api';
 
@@ -23,6 +23,15 @@ const MovieDetails = () => {
       .finally(() => setLoading(false));
   }, [movieId]);
 
+  // Рік виходу фільму
+  const getReleaseYear = () => {
+    if (movie && movie.release_date) {
+      const releaseDate = new Date(movie.release_date);
+      return releaseDate.getFullYear();
+    }
+    return '';
+  };
+
   return (
     <div>
       <Link to={backLinkLocationRef.current}>Go back</Link>
@@ -30,11 +39,21 @@ const MovieDetails = () => {
       {error && <div>{error}</div>}
       {movie && (
         <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <h2>{movie.title}</h2>
+          {movie.poster_path ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+              alt={movie.title}
+            />
+          ) : (
+            <img
+              src={'https://st3.depositphotos.com/23594922/31822/v/450/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg'}
+              alt="Nothing"
+              width={300}
+            />
+          )}
+          <h2>
+            {movie.title} ({getReleaseYear()})
+          </h2>
           <p>User Score: {(movie.vote_average * 10).toFixed(0)}%</p>
 
           <div>

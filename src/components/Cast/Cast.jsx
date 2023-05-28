@@ -23,7 +23,6 @@ const Cast = () => {
               />
             ) : (
               <img
-                // src={'https://cdn.pixabay.com/photo/2013/07/13/13/49/sheep-161630_1280.png'}
                 src={
                   'https://cdn.pixabay.com/photo/2016/09/25/14/09/cat-1693788_1280.jpg'
                 }

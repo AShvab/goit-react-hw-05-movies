@@ -21,13 +21,21 @@ const Movies = () => {
     setSearchParams(nextParams);
   };
 
+  const getReleaseYear = movie => {
+    if (movie && movie.release_date) {
+      const releaseDate = new Date(movie.release_date);
+      return `(${releaseDate.getFullYear()})`;
+    }
+    return '';
+  };
+
   return (
     <>
       <SearchBox value={query} onChange={updateQueryString} />
       {movies.map(movie => (
         <li key={movie.id}>
           <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-            {movie.title}
+            {movie.title} {getReleaseYear(movie)}
           </Link>
         </li>
       ))}

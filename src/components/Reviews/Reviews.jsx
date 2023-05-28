@@ -12,14 +12,13 @@ const Reviews = () => {
 
   return (
     <div>
-      <h2>Reviews</h2>
       {reviews.length > 0 ? (
         <ul>
-          {reviews.map(review => (
-            <li key={review.id}>
-              <h3>Author: {review.author}</h3>
-              <p>{review.content}</p>
-              {/* <a href={review.url} target="_blank" rel="noopener noreferrer">
+          {reviews.map(({id, author, content}) => (
+            <li key={id}>
+              <h3>Author: {author}</h3>
+              <p>{content}</p>
+              {/* <a href={url} target="_blank" rel="noopener noreferrer">
                 Read More
               </a> */}
             </li>

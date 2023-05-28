@@ -4,6 +4,7 @@ import Layout from './Layout/Layout';
 
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
+import { NotFound } from 'pages/NotFound';
 
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
@@ -22,7 +23,7 @@ const App = () => {
           </Route>
         </Route>
 
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );
