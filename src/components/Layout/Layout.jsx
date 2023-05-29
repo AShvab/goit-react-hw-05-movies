@@ -14,16 +14,16 @@ const Layout = () => {
           style: {
             background: '#360404',
             color: '#fff',
-          }
+          },
         }}
       />
       <header className={css.header}>
         <Navigation />
       </header>
 
-      <main>
-        <Suspense fallback={<div>Loading...</div>}>  
-        <Outlet />
+      <main className={css.main}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
         </Suspense>
       </main>
 

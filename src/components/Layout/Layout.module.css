@@ -1,13 +1,16 @@
 .header {
-    padding: 8px;
-    /* background: rgb(77,1,111);
-      background: linear-gradient(121deg, rgba(77,1,111,1) 0%, rgba(169,47,162,1) 48%, rgba(15,194,231,1) 100%); */
-    box-shadow: 0px 3px 13px 4px rgba(0, 0, 0, 0.75);
-    background: rgb(18, 0, 0);
-    background: linear-gradient(
-      149deg,
-      rgba(18, 0, 0, 1) 0%,
-      rgba(47, 1, 1, 1) 28%,
-      rgba(164, 3, 3, 1) 84%
-    );
-  }
+  padding: 8px;
+  width: 100%;
+  box-shadow: 0px 3px 13px 4px rgba(0, 0, 0, 0.75);
+  background: rgb(18, 0, 0);
+  background: linear-gradient(
+    149deg,
+    rgba(18, 0, 0, 1) 0%,
+    rgba(47, 1, 1, 1) 28%,
+    rgba(164, 3, 3, 1) 84%
+  );
+}
+
+.main {
+  padding: 20px;
+}

@@ -2,20 +2,11 @@
   margin-left: 30px;
 }
 
-.title {
-  padding-left: 28px;
-}
-
-.list {
-padding-left: 50px;
-}
-
 .item {
   margin-bottom: 8px;
 }
 
 .link {
- 
   color: black;
   text-decoration: none;
 }

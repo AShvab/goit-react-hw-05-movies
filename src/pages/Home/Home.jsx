@@ -26,7 +26,11 @@ const Home = () => {
         {movies.map(({ id, title, release_date }) => {
           return (
             <li key={id} className={css.item}>
-              <Link to={`/movies/${id}`} state={{ from: location }} className={css.link}>
+              <Link
+                to={`/movies/${id}`}
+                state={{ from: location }}
+                className={css.link}
+              >
                 {title} {getReleaseYear({ release_date })}
               </Link>
             </li>
@@ -38,4 +42,3 @@ const Home = () => {
 };
 
 export default Home;
-

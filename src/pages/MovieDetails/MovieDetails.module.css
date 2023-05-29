@@ -1,0 +1,51 @@
+.movieCard{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.poster{
+    width: 300px;
+    margin-right: 20px;
+}
+
+.movieInfo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.linkBack{
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: rgb(205, 202, 199);
+    border: 1px solid rgb(176, 174, 174);
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.linkBack:hover,
+.linkBack:active {
+  color: rgb(255, 102, 0);
+  background-color: #360404;
+}
+
+.movieGenres {
+display: inline-flex;
+margin-right: 12px;
+}
+
+.wrapper {
+    border-top: 2px solid rgb(176, 174, 174);
+    border-bottom: 2px solid rgb(176, 174, 174);
+}
+
+.linkList:hover,
+.linkList:focus{
+color: rgb(255, 102, 0);
+}
+
