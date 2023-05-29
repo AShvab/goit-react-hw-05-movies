@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { trendingMoviesFetch } from 'services/api';
 import css from './Home.module.css';
+// import ReleaseYear from 'utils/ReleaseYear';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -11,19 +12,11 @@ const Home = () => {
     trendingMoviesFetch().then(setMovies);
   }, []);
 
-  const getReleaseYear = movie => {
-    if (movie && movie.release_date) {
-      const releaseDate = new Date(movie.release_date);
-      return `(${releaseDate.getFullYear()})`;
-    }
-    return '';
-  };
-
   return (
     <div className={css.container}>
       <h1 className={css.title}>Trending today</h1>
       <ul className={css.list}>
-        {movies.map(({ id, title, release_date }) => {
+        {movies.map(({ id, title }) => {
           return (
             <li key={id} className={css.item}>
               <Link
@@ -31,7 +24,8 @@ const Home = () => {
                 state={{ from: location }}
                 className={css.link}
               >
-                {title} {getReleaseYear({ release_date })}
+                {title} 
+                {/* (<ReleaseYear movie={movies} />) */}
               </Link>
             </li>
           );
