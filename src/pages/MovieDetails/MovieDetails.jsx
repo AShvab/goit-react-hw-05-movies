@@ -28,13 +28,13 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {loading && <div>Loading ...</div>}
+      {loading && <p>Loading ...</p>}
       <Link to={backLinkLocationRef.current} className={css.linkBack}>
         {' '}
         &larr; Go back{' '}
       </Link>
 
-      {error && <div>{error}</div>}
+      {Boolean(error) && <p>{error}</p>}
       {movie && (
         <div className={css.movieCard}>
           {movie.poster_path ? (
