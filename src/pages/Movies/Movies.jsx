@@ -48,7 +48,7 @@ const Movies = () => {
         <h2>No movies found 😢</h2>
       ) : (
         <ul>
-          {movies.map(movie => (
+          {Array.isArray(movies) && movies.map(movie => (
             <li key={movie.id} className={css.item}>
               <Link
                 to={`/movies/${movie.id}`}
