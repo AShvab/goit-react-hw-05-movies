@@ -12,7 +12,7 @@ const Reviews = () => {
 
   return (
     <div>
-      {reviews.length > 0 ? (
+      {Array.isArray(reviews) && reviews.length > 0 ? (
         <ul className={css.list}>
           {reviews.map(({ id, author, content }) => (
             <li key={id}>

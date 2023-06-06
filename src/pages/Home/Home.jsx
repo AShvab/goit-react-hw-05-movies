@@ -16,7 +16,7 @@ const Home = () => {
     <div className={css.container}>
       <h1 className={css.title}>Trending today</h1>
       <ul className={css.list}>
-        {Array.isArray(movies) && movies.map(({ id, title, release_date }) => {
+        {Array.isArray(movies) && movies.length>0 && movies.map(({ id, title, release_date }) => {
           return (
             <li key={id} className={css.item}>
               <Link
